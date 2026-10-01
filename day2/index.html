@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickNotes - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickNotes - Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>QuickNotes</h1>
-        <p>Your simple, fast note-taking web app</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h2>My Notes</h2>
-            <p>Welcome to QuickNotes! Manage and organize your everyday tasks effortlessly.</p>
-        </section>
-    </main>
+  <header>
+    <h1>QuickNotes</h1>
+    <p>Your simple, fast, web-based note-taking assistant.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>&copy; 2026 QuickNotes. All rights reserved.</p>
-    </footer>
+  <main>
+    <section>
+      <h2>Add a Note</h2>
+      <form id="note-form" action="#" method="post">
+        <label for="note-input">Note Content</label>
+        <input type="text" id="note-input" placeholder="Type your note here..." required />
+        <button type="submit">Add Note</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>My Notes</h2>
+      <ul id="notes-list">
+        <li class="note">Buy groceries for the week</li>
+        <li class="note">Complete Day 2 CSS practice task</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 QuickNotes</p>
+  </footer>
+
 </body>
 </html>
