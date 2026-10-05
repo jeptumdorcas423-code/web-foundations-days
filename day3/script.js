@@ -1,4 +1,4 @@
-// 1. Starting Data
+// Starting Data
 let notes = [
   { id: 1, text: "Buy milk and bread", category: "personal" },
   { id: 2, text: "Finish the Day 3 assignment", category: "study" },
@@ -7,13 +7,13 @@ let notes = [
   { id: 5, text: "Call mum", category: "personal" },
 ];
 
-// 2. searchNotes(word): Search using filter, toLowerCase, and includes
+// 1. searchNotes(word): Search using filter, toLowerCase, and includes
 function searchNotes(word) {
   const searchTerm = word.toLowerCase();
   return notes.filter((note) => note.text.toLowerCase().includes(searchTerm));
 }
 
-// 3. longestNote(): Handles empty array, then compares lengths
+// 2. longestNote(): Handles empty array first, then compares lengths
 function longestNote() {
   if (notes.length === 0) return null;
   return notes.reduce((longest, current) => {
@@ -21,7 +21,7 @@ function longestNote() {
   }, notes[0]);
 }
 
-// 4. countByCategory(): Loops over notes and increments counters in an object
+// 3. countByCategory(): Loops over notes and increments counters in an object
 function countByCategory() {
   const counts = {};
   for (const note of notes) {
@@ -31,7 +31,7 @@ function countByCategory() {
   return counts;
 }
 
-// 5. getSummary(): Uses countByCategory, singular/plural grammar, and template literals
+// 4. getSummary(): Uses countByCategory, singular/plural grammar, and template literals
 function getSummary() {
   const total = notes.length;
   const word = total === 1 ? "note" : "notes";
@@ -46,13 +46,13 @@ function getSummary() {
   return `${total} ${word}: ${categoryDetails}.`;
 }
 
-// 6. isDuplicate(text): Uses some and compares trimmed lower-case text
+// 5. isDuplicate(text): Uses some and compares trimmed lower-case text
 function isDuplicate(text) {
   const cleanedText = text.trim().toLowerCase();
   return notes.some((note) => note.text.trim().toLowerCase() === cleanedText);
 }
 
-// 7. addNote(text, category): Validates length, duplicate, and category before adding
+// 6. addNote(text, category): Validates length, duplicate, and category before adding
 function addNote(text, category) {
   const cleanedText = text.trim();
   const validCategories = ["personal", "work", "study"];
@@ -76,11 +76,13 @@ function addNote(text, category) {
     return false;
   }
 
-  // Add valid note
+  // Add valid note (including done and createdAt from Days 1-2 structure)
   const newNote = {
     id: Date.now(),
     text: cleanedText,
     category: catLower,
+    done: false,
+    createdAt: new Date().toLocaleString(),
   };
 
   notes.push(newNote);
