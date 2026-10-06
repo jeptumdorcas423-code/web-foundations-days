@@ -1,0 +1,76 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --border-color: #cccccc;
+  --card-bg: #f9f9f9;
+  --btn-bg: #e0e0e0;
+  --btn-text: #1a1a1a;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --border-color: #444444;
+  --card-bg: #1e1e1e;
+  --btn-bg: #333333;
+  --btn-text: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.stats {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Character counter highlight states */
+.warning {
+  color: #d97706; /* Orange */
+}
+
+.over {
+  color: #dc2626; /* Red */
+  font-weight: bold;
+}
